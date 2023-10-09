@@ -33,12 +33,16 @@ const game = () => {
     }
 
     const winner = (player,computer) => {
-
+        const plr = document.querySelector('.player')
+        const comp = document.querySelector('.comp')
         const result = document.querySelector('.result')
         const playerScoreBoard =document.querySelector('.countp')
         const computerScoreBoard = document.querySelector('.countc')
         player = player.toLowerCase();
         computer = computer.toLowerCase();
+
+        plr.textContent = "Player: " + player;
+        comp.textContent = "computer: " + computer;
 
         if( player === computer){
             result.textContent = "Tie"
@@ -83,10 +87,15 @@ const game = () => {
     }
 
     const gameOver = (playerOptions, movesLeft) => {
+        const plr = document.querySelector('.player')
+        const comp = document.querySelector('.comp')
 
         const chooseMove = document.querySelector('.move')
         const result = document.querySelector('.result')
         const reloadBtn = document.querySelector('.reload')
+
+        plr.textContent = " " ;
+        comp.textContent = " " ;
 
         playerOptions.forEach(option => {
             option.style.display = "none";
